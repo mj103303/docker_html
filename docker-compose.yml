@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  flask:
+    build: ./flask_test
+    restart: always
+    container_name: flask
+    ports:
+      - "5001:5005"
+    command: gunicorn -w 1 -b 0.0.0.0:5005 app:app
