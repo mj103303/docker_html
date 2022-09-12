@@ -7,7 +7,7 @@ html = '''
 <p>도커 쉽게 하기 마스터</p>
 '''
 
-@app.route("/index")
+@app.route("/")
 def index():
     return html
 

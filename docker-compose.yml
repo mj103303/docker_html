@@ -6,5 +6,15 @@ services:
     restart: always
     container_name: flask
     ports:
-      - "5001:5005"
+      - "5005:5005"
     command: gunicorn -w 1 -b 0.0.0.0:5005 app:app
+
+  nginx:
+    image: nginx:latest
+    restart: always
+    container_name: nginx
+    ports:
+      - "5006:5006"
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+    
