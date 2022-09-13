@@ -17,4 +17,14 @@ services:
       - "5006:5006"
     volumes:
       - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo
+    volumes:
+      - "mongodb/data:/data/db"
+    ports:
+      - "27017:27017"
+    
     
